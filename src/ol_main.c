@@ -358,7 +358,11 @@ _change_lrc (void)
   _cancel_source_task ();
   if (current_lrc)
     g_object_unref (current_lrc);
-  current_lrc = ol_lyrics_get_current_lyrics (lyrics_proxy);
+
+  // change to get from my metadata
+  current_lrc = ol_lyrics_get_lyrics (lyrics_proxy, current_metadata);
+  // current_lrc = ol_lyrics_get_current_lyrics (lyrics_proxy);
+
   CALL_DISPLAY_MODULES (ol_display_module_set_lrc, current_lrc);
   _update_position ();
   if (current_lrc == NULL &&

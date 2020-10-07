@@ -8,6 +8,14 @@ OSD Lyrics is a desktop application to view lyrics compatible with various media
 
 ![Screenshot in OSD mode](screenshot.png)
 
+## Enhancement
+
+- metadata changed to get real title and artist
+  - when no tag data, find title / artist from meta title
+  - following meta title formats supported:
+  - %n.%p-%t, %n.%t--%p, %n.%t, %p-%t, %t--%p, %t
+- default download changed to download lyrics of best match first
+
 ## License
 
 OSD Lyrics is released under GPL v3. See [LICENSE](LICENSE) for more detail.
