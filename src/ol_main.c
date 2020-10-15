@@ -365,6 +365,26 @@ _change_lrc (void)
 
   CALL_DISPLAY_MODULES (ol_display_module_set_lrc, current_lrc);
   _update_position ();
+
+  // check ignore path
+  const char *uri = ol_metadata_get_uri (current_metadata);
+  if (uri != NULL)
+  {
+    OlConfigProxy *config = ol_config_proxy_get_instance ();
+    char **list = ol_config_proxy_get_str_list (config,
+                                              "Download/ignore-path",
+                                              NULL);
+    for (char ** l = list; *l; l++)
+    {
+      if (g_strstr_len (uri, -1, *l) != NULL)
+      {
+        g_strfreev(list);
+        return;
+      }
+    }
+    g_strfreev(list);
+  }
+
   if (current_lrc == NULL &&
       !ol_is_string_empty (ol_metadata_get_title (current_metadata)))
     ol_app_download_lyric (current_metadata);
