@@ -15,6 +15,7 @@ OSD Lyrics is a desktop application to view lyrics compatible with various media
   - following meta title formats supported:
   - %n.%p-%t, %n.%t--%p, %n.%t, %p-%t, %t--%p, %t
 - default download changed to download lyrics of best match first
+- default download add ignore path by key 'Download/ignore-path' in osdlyrics.conf
 
 ## License
 
