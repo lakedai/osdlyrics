@@ -13,10 +13,9 @@
 ### install instruction:
 	sudo apt install osdlyrics
 	./autogen.sh
-	./configure --prefix=/tmp PYTHON=/usr/bin/python3
+	./configure --prefix=/usr PYTHON=/usr/bin/python3
 	make
 	sudo make install
-	sudo cp /tmp/bin/osdlyrics /usr/bin/
 
 ### build required:(ubuntu20.04)
 - autoconf automake libtool
