@@ -1,0 +1,1233 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ol_me",
+				"ol_metadata_get_title"
+			],
+			[
+				"g_freev",
+				"g_strfreev"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"t",
+				"title"
+			],
+			[
+				"_a",
+				"_artist"
+			],
+			[
+				"_t",
+				"_title"
+			],
+			[
+				"Ol",
+				"OlLyricSourceCandidate"
+			],
+			[
+				"gli",
+				"g_list_next"
+			],
+			[
+				"cur",
+				"current_metadata"
+			],
+			[
+				"curr",
+				"current_metadata"
+			],
+			[
+				"se",
+				"search_metadata"
+			],
+			[
+				"art",
+				"artist1"
+			],
+			[
+				"align",
+				"align-self\tproperty"
+			],
+			[
+				"bu",
+				"button"
+			],
+			[
+				"find",
+				"findbycustom〔class〕"
+			],
+			[
+				"sty",
+				"style\tTag"
+			],
+			[
+				"delete",
+				"deletebyid〔class〕"
+			],
+			[
+				"crea",
+				"createElement〔function〕"
+			],
+			[
+				"ap",
+				"application"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"route",
+				"routeTo〔variable〕"
+			],
+			[
+				"rout",
+				"routeTo〔variable〕"
+			],
+			[
+				"close",
+				"closeOnSelect"
+			],
+			[
+				"fin",
+				"findcustom"
+			],
+			[
+				"tab-add",
+				"tab-add-cal-0"
+			],
+			[
+				"tab",
+				"tab-0"
+			],
+			[
+				"pad",
+				"padding\tproperty"
+			],
+			[
+				"too",
+				"toolbar-through"
+			],
+			[
+				"E",
+				"export"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/ol_metadata.h",
+			"settings":
+			{
+				"buffer_size": 5969,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ol_metadata.c",
+			"settings":
+			{
+				"buffer_size": 17807,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ol_main.c",
+			"settings":
+			{
+				"buffer_size": 27469,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ol_player.c",
+			"settings":
+			{
+				"buffer_size": 31458,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ol_lyric_candidate_selector.c",
+			"settings":
+			{
+				"buffer_size": 6426,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/mymake.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/myc++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/myc++.sublime-build",
+					"myrun"
+				]
+			],
+			[
+				"Packages/User/myc++.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/mymake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"clean"
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"install"
+				]
+			],
+			[
+				"Packages/User/mymake.sublime-build",
+				"install"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/mymake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"install"
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"clean"
+				]
+			],
+			[
+				"Packages/User/mymake.sublime-build",
+				"install"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/mymake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"install"
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"run"
+				],
+				[
+					"Packages/User/mymake.sublime-build",
+					"clean"
+				]
+			],
+			[
+				"Packages/User/mymake.sublime-build",
+				"run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"new bu",
+				"Build: New Build System"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 164.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/legend/libs/osdlyrics",
+		"/home/legend/libs/osdlyrics/python",
+		"/home/legend/libs/osdlyrics/src"
+	],
+	"file_history":
+	[
+		"/home/legend/.config/sublime-text-3/Packages/Terminal/Default (Linux).sublime-keymap",
+		"/home/legend/.config/sublime-text-3/Packages/User/mymake.sublime-build",
+		"/home/legend/.config/sublime-text-3/Packages/CTags/Default.sublime-keymap",
+		"/home/legend/.config/sublime-text-3/Packages/User/makeinstall.sublime-build",
+		"/home/legend/.config/sublime-text-3/Packages/User/untitled.sublime-build",
+		"/home/legend/.config/sublime-text-3/Packages/User/myc++.sublime-build",
+		"/home/legend/libs/osdlyrics/osdlyrics.sublime-project",
+		"/home/legend/.config/sublime-text-3/Packages/CTags/CTags.sublime-settings",
+		"/home/legend/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/legend/.config/sublime-text-3/Packages/AutoFileName/autofilename.sublime-settings",
+		"/home/legend/libs/osdlyrics/src/ol_notify.c",
+		"/home/legend/libs/osdlyrics/src/ol_display_module.c",
+		"/home/legend/libs/osdlyrics/src/ol_config_proxy.c",
+		"/home/legend/libs/osdlyrics/src/ol_lyrics.c",
+		"/home/legend/libs/osdlyrics/src/ol_player.h",
+		"/home/legend/libs/osdlyrics/src/ol_scroll_module.c",
+		"/home/legend/libs/osdlyrics/src/ol_osd_module.c",
+		"/home/legend/libs/osdlyrics/src/ol_lyric_source.c",
+		"/home/legend/libs/osdlyrics/src/ol_lyric_candidate_list.c",
+		"/home/legend/libs/osdlyrics/src/ol_search_dialog.c",
+		"/home/legend/libs/osdlyrics/daemon/lyrics.py",
+		"/home/legend/libs/osdlyrics/src/ol_main.c",
+		"/home/legend/libs/osdlyrics/python/lyricsource.py",
+		"/home/legend/libs/osdlyrics/src/ol_lyric_source.h",
+		"/home/legend/libs/osdlyrics/src/ol_lyrics.h",
+		"/home/legend/libs/osdlyrics/src/ol_menu.h",
+		"/home/legend/libs/osdlyrics/src/ol_lyric_source_list.h",
+		"/home/legend/libs/osdlyrics/src/ol_menu.c",
+		"/home/legend/libs/osdlyrics/po/zh_CN.po",
+		"/home/legend/libs/osdlyrics/src/ol_metadata.c",
+		"/home/legend/libs/osdlyrics/src/ol_metadata.h",
+		"/home/legend/libs/osdlyrics/src/ol_app.h",
+		"/home/legend/libs/osdlyrics/src/ol_gui.h",
+		"/home/legend/libs/osdlyrics/src/ol_search_dialog.h",
+		"/home/legend/libs/osdlyrics/src/ol_player.c",
+		"/home/legend/libs/osdlyrics/src/ol_path_pattern.c",
+		"/home/legend/libs/osdlyrics/src/ol_debug.h",
+		"/home/legend/libs/osdlyrics/src/ol_option.c",
+		"/home/legend/libs/osdlyrics/src/ol_lrc.c",
+		"/home/legend/libs/osdlyrics/src/ol_lrc.h",
+		"/home/legend/libs/osdlyrics/src/ol_commands.c",
+		"/home/legend/libs/osdlyrics/src/ol_path_pattern.h",
+		"/home/legend/libs/osdlyrics/src/ol_option.h",
+		"/home/legend/libs/xsltv/index.html",
+		"/home/legend/libs/xsltv/tv.js",
+		"/home/legend/libs/xsltv/boxover.js",
+		"/home/legend/libs/xsltv/xmltv.dtd",
+		"/home/legend/libs/xsltv/tv.xsl",
+		"/home/legend/libs/myapp/www/js/index.js",
+		"/home/legend/libs/myapp/www/index.html",
+		"/home/legend/libs/myapp/www/js/ajax.js",
+		"/home/legend/libs/myapp/www/pages/tab.html",
+		"/home/legend/libs/myapp/www/js/framework7.bundle.js",
+		"/home/legend/下载/sea.js",
+		"/home/legend/libs/myapp/www/css/index-ios.css",
+		"/home/legend/libs/myapp/www/css/index-md.css",
+		"/home/legend/libs/myapp/www/css/index.css",
+		"/home/legend/libs/myapp/www/js/event.js",
+		"/home/legend/libs/myapp/www/pages/tab-edit-0.html",
+		"/home/legend/libs/spring-boot-examples/spring-boot-web/src/main/resources/application.properties",
+		"/home/legend/libs/myapp/www/pages/add-1.html",
+		"/home/legend/libs/myapp/www/css/material-icons.css",
+		"/home/legend/libs/myapp/www/css/framework7-icons.css",
+		"/home/legend/libs/myapp/www/pages/xxx",
+		"/home/legend/libs/myapp/www/pages/about.html",
+		"/home/legend/libs/myapp/www/js/tabs.js",
+		"/home/legend/libs/myapp/www/about.html",
+		"/home/legend/libs/starter/pages/about.html",
+		"/home/legend/libs/starter/index.html",
+		"/home/legend/libs/starter/js/index.js",
+		"/home/legend/libs/starter/about.html",
+		"/home/legend/bin/cordova-server/cordova-server.js",
+		"/home/legend/bin/db",
+		"/home/legend/bin/dcr",
+		"/home/legend/bin/dcm",
+		"/home/legend/libs/cordovaServer/index.js",
+		"/home/legend/libs/cordovaServer/cordova-server.js",
+		"/home/legend/libs/myapp2/build/webpack.config.js",
+		"/home/legend/libs/myapp2/build/build.js",
+		"/home/legend/libs/myapp2/www/js/app.js",
+		"/home/legend/libs/myapp2/src/index.html",
+		"/home/legend/libs/myapp2/cordova/www/index.html",
+		"/home/legend/libs/myapp2/cordova/www/js/app.js",
+		"/home/legend/libs/myapp2/www/index.html",
+		"/home/legend/libs/myapp2/src/js/app.js",
+		"/home/legend/libs/myapp2/src/template7-helpers-list.js",
+		"/home/legend/libs/myapp2/src/app.f7.html",
+		"/home/legend/libs/myapp2/cordova/www/js/index.js",
+		"/home/legend/libs/myapp/platforms/android/cordova/lib/builders/ProjectBuilder.js",
+		"/home/legend/libs/myapp/platforms/android/cordova/lib/emulator.js",
+		"/home/legend/libs/myapp/cordova/platforms/android/cordova/lib/builders/ProjectBuilder.js",
+		"/home/legend/libs/myapp/cordova/platforms/android/cordova/lib/builders/builders.js",
+		"/home/legend/libs/myapp/src/js/app.js",
+		"/home/legend/libs/myapp/cordova/platforms/android/gradlew",
+		"/home/legend/bin/node-v12.14.1-linux-x64/lib/node_modules/framework7-cli/index.js",
+		"/home/legend/libs/myapp/src/index.html",
+		"/home/legend/libs/myapp/cordova/www/js/index.js",
+		"/home/legend/libs/myapp/cordova/www/index.html",
+		"/home/legend/libs/greeter/www/js/index.js",
+		"/home/legend/libs/greeter/www/index.html",
+		"/home/legend/libs/greeter/platforms/android/cordova/lib/builders/ProjectBuilder.js",
+		"/home/legend/libs/greeter/platforms/android/gradlew",
+		"/home/legend/libs/greeter/platforms/android/platform_www/cordova_plugins.js",
+		"/home/legend/libs/greeter/platforms/android/platform_www/cordova.js",
+		"/home/legend/libs/greeter/platforms/android/cordova/lib/config/GradlePropertiesParser.js",
+		"/home/legend/libs/greeter/platforms/android/cordova/lib/builders/builders.js",
+		"/home/legend/bin/dp",
+		"/home/legend/libs/greeter/platforms/android/cordova/lib/build.js",
+		"/home/legend/bin/dir",
+		"/home/legend/data/dockerfile/ubuntu-cn/start.sh",
+		"/home/legend/data/dockerfile/gzweb1/Dockerfile",
+		"/home/legend/data/dockerfile/ubuntu-cn/Dockerfile",
+		"/home/legend/data/dockerfile/ignite1/Dockerfile",
+		"/home/legend/data/dockerfile/rosweb/Dockerfile",
+		"/home/legend/data/dockerfile/rosweb1/Dockerfile",
+		"/home/legend/bin/dpl",
+		"/home/legend/bin/dph",
+		"/home/legend/bin/brookinit",
+		"/home/legend/bin/dcp",
+		"/home/legend/data/autossh/lib.systemd.system.ass.service",
+		"/home/legend/data/autossh/空文档",
+		"/home/legend/bin/ssr/run.sh",
+		"/home/legend/ssr",
+		"/media/hitachi/music/猛士/猛士的士高串烧.第1集/猛士的士高串烧.第一集.cue",
+		"/home/legend/data/mail/2010_20100623-941/index.html",
+		"/home/legend/data/dockerfile/jupyter/Dockerfile",
+		"/media/hitachi/music/猛士/猛士的士高串烧.第1集/曲目.txt",
+		"/home/legend/data/dockerfile/jupyter2/Dockerfile"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"set_lrc",
+			"_track_changed_cb",
+			"strlen",
+			"change",
+			"download_button",
+			"equal",
+			"metadata",
+			"candidates",
+			"change",
+			"meta",
+			"_metadata",
+			"GetCurrentLyrics",
+			"save",
+			"lyrics_proxy",
+			"player",
+			"track",
+			"Download/download-engine",
+			"OL_CONFIG_DEFAULT_DOWNLOAD_ENGINE",
+			"lyric_source",
+			"_add_string_to_dict_builder",
+			"g_strfreev",
+			"\"\"",
+			"**",
+			"[",
+			"for ",
+			"for",
+			"boo",
+			"bool",
+			"未知",
+			"G_TYPE_INSTANCE_GET_PRIVATE",
+			"current_metadata",
+			"_search_started_cb",
+			"Searching lyrics from",
+			"正在",
+			"search",
+			"t2",
+			"t1",
+			"title",
+			"'-'",
+			"\"-\"",
+			"'-'",
+			"-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"title2",
+			"title1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/ol_metadata.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5969,
+								5969
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3312.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/ol_metadata.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14572,
+								14572
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										14611,
+										14612
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										14571,
+										14572
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10535.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/ol_main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12365,
+								12365
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5995.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/ol_player.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21367,
+								21367
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										21367,
+										21368
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										21355,
+										21356
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13004.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/ol_lyric_candidate_selector.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2674,
+								2674
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3462,
+										3463
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										2390,
+										2391
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1496.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 151.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/mymake.sublime-build",
+	"project": "osdlyrics.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 345.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
