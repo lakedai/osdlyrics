@@ -15,7 +15,7 @@
 	./autogen.sh
 	./configure --prefix=/usr PYTHON=/usr/bin/python3
 	make
-	sudo make install
+	sudo cp src/osdlyrics /usr/bin
 
 ### build required:(ubuntu20.04)
 - autoconf automake libtool
