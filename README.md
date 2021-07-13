@@ -8,7 +8,7 @@ OSD Lyrics is a desktop application to view lyrics compatible with various media
 
 ![Screenshot in OSD mode](screenshot.png)
 
-[] (change)
+[//]: (change)
 ## Enhancement
 
 - metadata changed to get real title and artist
