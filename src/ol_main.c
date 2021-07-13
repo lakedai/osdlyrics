@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include <stdio.h>
 #include <sys/types.h>
@@ -362,11 +362,12 @@ _change_lrc (void)
   // change to get from my metadata
   current_lrc = ol_lyrics_get_lyrics (lyrics_proxy, current_metadata);
   // current_lrc = ol_lyrics_get_current_lyrics (lyrics_proxy);
+  // change end
 
   CALL_DISPLAY_MODULES (ol_display_module_set_lrc, current_lrc);
   _update_position ();
 
-  // check ignore path
+  // change to check ignore path
   const char *uri = ol_metadata_get_uri (current_metadata);
   if (uri != NULL)
   {
@@ -384,6 +385,7 @@ _change_lrc (void)
     }
     g_strfreev(list);
   }
+// change end
 
   if (current_lrc == NULL &&
       !ol_is_string_empty (ol_metadata_get_title (current_metadata)))

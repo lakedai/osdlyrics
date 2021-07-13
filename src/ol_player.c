@@ -817,6 +817,7 @@ ol_player_get_metadata (OlPlayer *player, OlMetadata *metadata)
     ol_metadata_set_artist (metadata, artist);
     ol_metadata_set_title (metadata, title);
   }
+  // change end
 
   return TRUE;
 }

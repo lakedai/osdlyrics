@@ -502,6 +502,7 @@ ol_metadata_to_variant (OlMetadata *metadata)
   return ret;
 }
 
+// change
 /*
   check whether tag artist is valid
  */
@@ -535,7 +536,7 @@ gboolean artist_valid(const OlMetadata *metadata)
 /*
   get real title:
   if tag artist is valid, assume tag title is correct and return it, else parse it and return real title
-  support tag title formats: 
+  support tag title formats:
     %n.%p-%t, %n.%t--%p, %n.%t, %p-%t, %t--%p, %t
   return NULL or a newly allocated string
  */
@@ -624,7 +625,7 @@ char *ol_metadata_get_search_title (const OlMetadata *metadata)
 /*
   get real artist:
   if tag artist is valid, return it, else parse tag title and return real artist
-  support tag title formats: 
+  support tag title formats:
     %n.%p-%t, %n.%t--%p, %n.%t, %p-%t, %t--%p, %t
   return NULL or a newly allocated string
  */
@@ -653,7 +654,7 @@ char *ol_metadata_get_search_artist (const OlMetadata *metadata)
     title = g_strstrip (g_strdup (metadata->title));
   }
   g_strfreev (pathv);
-  
+
   char * artist = NULL;
   // get artist from tag title
   gchar **pathv2 = g_strsplit (title, "--", 0);
@@ -684,3 +685,4 @@ char *ol_metadata_get_search_artist (const OlMetadata *metadata)
 
   return artist;
 }
+// change end

@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include <stdlib.h>
 #include "ol_lyric_candidate_selector.h"
@@ -46,7 +46,7 @@ gboolean
 ol_lyric_candidate_selector_download (GtkWidget *widget, gpointer data)
 {
   ol_log_func ();
-  
+
   OlLyricSourceCandidate *candidate;
   candidate = ol_lyric_candidate_list_get_selected (list);
   if (candidate)
@@ -60,8 +60,8 @@ ol_lyric_candidate_selector_download (GtkWidget *widget, gpointer data)
   {
     if (gtk_toggle_button_get_active (prompt_btn))
     {
-      ol_config_proxy_set_bool (config, 
-                                "Download/download-first-lyric", 
+      ol_config_proxy_set_bool (config,
+                                "Download/download-first-lyric",
                                 TRUE);
     }
   }
@@ -69,6 +69,7 @@ ol_lyric_candidate_selector_download (GtkWidget *widget, gpointer data)
   return TRUE;
 }
 
+// change
 /*
   get best match
  */
@@ -121,7 +122,7 @@ gboolean
 ol_lyric_candidate_best_download (GList *candidates)
 {
   ol_log_func ();
-  
+
   OlLyricSourceCandidate *candidate;
   candidate = ol_lyric_candidate_list_get_best (candidates);
   if (candidate)
@@ -139,14 +140,15 @@ ol_lyric_candidate_best_download (GList *candidates)
   {
     if (gtk_toggle_button_get_active (prompt_btn))
     {
-      ol_config_proxy_set_bool (config, 
-                                "Download/download-first-lyric", 
+      ol_config_proxy_set_bool (config,
+                                "Download/download-first-lyric",
                                 TRUE);
     }
   }
   gtk_widget_hide (window);
   return TRUE;
 }
+// change end
 
 static void
 ol_lrc_fetch_select_changed (GtkTreeSelection *selection, gpointer data)
@@ -178,7 +180,7 @@ internal_init ()
   if (list == NULL)
   {
     list = GTK_TREE_VIEW (ol_gui_get_widget ("candidate-list"));
-    ol_lyric_candidate_list_init (list, 
+    ol_lyric_candidate_list_init (list,
                                   G_CALLBACK (ol_lrc_fetch_select_changed));
   }
   return TRUE;
@@ -200,6 +202,7 @@ ol_lyric_candidate_selector_show (GList *candidates,
 
   // change to keep whole list
   GList * _candidates = candidates;
+  // change end
 
   ol_lyric_candidate_list_set_list (list, candidates);
   if (metadata == NULL)
@@ -211,10 +214,11 @@ ol_lyric_candidate_selector_show (GList *candidates,
   if (config != NULL)
     prompt = ol_config_proxy_get_bool (config, "Download/download-first-lyric");
   if (prompt || g_list_next (candidates) == NULL)
-    
+
     // change to download best match
     ol_lyric_candidate_best_download (_candidates);
     // ol_lyric_candidate_selector_download (GTK_WIDGET (download_button), NULL);
+    // change end
 
   else
     gtk_widget_show (window);

@@ -4,11 +4,14 @@
 - default download changes to download best match first
 
 ### changed src files:
+- 修改：     README.md
+- 增加：     readme.md
+- 修改：     po/zh_CN.po
+- 修改：     src/ol_lyric_candidate_selector.c
+- 修改：     src/ol_main.c
 - 修改：     src/ol_metadata.c
 - 修改：     src/ol_metadata.h
-- 修改：     src/ol_main.c
 - 修改：     src/ol_player.c
-- 修改：     src/ol_lyric_candidate_selector.c
 
 ### install instruction:
 	sudo apt install osdlyrics
