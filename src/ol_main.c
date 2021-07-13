@@ -23,6 +23,7 @@
 #include <signal.h>
 #include <pwd.h>
 #include <gio/gio.h>
+#include <gtk/gtkmain.h>
 #include "config.h"
 #include "ol_lrc.h"
 #include "ol_player.h"

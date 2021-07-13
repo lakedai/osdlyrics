@@ -1,1 +1,1 @@
-SUBDIRS = xiami lrc123 viewlyrics netease
+SUBDIRS = xiami megalobiz netease subtitles4songs

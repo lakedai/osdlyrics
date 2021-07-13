@@ -16,8 +16,8 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-#define OL_LYRICS_GET_PRIVATE(object)                                 \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((object), OL_TYPE_LYRICS, OlLyricsPrivate))
+#define OL_LYRICS_GET_PRIVATE(object) \
+    ((OlLyricsPrivate *)((OL_LYRICS(object))->priv))
 
 static void ol_lyrics_finalize (GObject *object);
 static void ol_lyrics_g_signal (GDBusProxy *proxy,
@@ -27,7 +27,7 @@ static void ol_lyrics_g_signal (GDBusProxy *proxy,
 static OlLrc *ol_lyrics_get_lrc_from_variant (OlLyrics *proxy,
                                               GVariant *variant);
 
-G_DEFINE_TYPE (OlLyrics, ol_lyrics, G_TYPE_DBUS_PROXY);
+G_DEFINE_TYPE_WITH_PRIVATE (OlLyrics, ol_lyrics, G_TYPE_DBUS_PROXY);
 
 static void
 ol_lyrics_init (OlLyrics *proxy)
@@ -45,8 +45,6 @@ ol_lyrics_class_init (OlLyricsClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
-
-  g_type_class_add_private (klass, sizeof (OlLyricsPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize     = ol_lyrics_finalize;

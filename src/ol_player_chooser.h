@@ -3,7 +3,7 @@
  * Copyright (C) 2011  Tiger Soldier <tigersoldier@gmail.com>
  *
  * This file is part of OSD Lyrics.
- * 
+ *
  * OSD Lyrics is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -15,15 +15,33 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>.
  */
 #ifndef _OL_PLAYER_CHOOSER_H_
 #define _OL_PLAYER_CHOOSER_H_
 
-#include <gtk/gtk.h>
-#define OL_PLAYER_CHOOSER(obj)                  GTK_CHECK_CAST (obj, ol_player_chooser_get_type (), OlPlayerChooser)
+#include <gtk/gtkdialog.h>
+#include <gtk/gtkwidget.h>
+#include <gtk/gtktogglebutton.h>
+#include <gtk/gtkradiobutton.h>
+#include <gtk/gtkscrolledwindow.h>
+#include <gtk/gtkentry.h>
+#include <gtk/gtklabel.h>
+#include <gtk/gtkimage.h>
+#include <gtk/gtkobject.h>
+#include <gtk/gtkbutton.h>
+#include <gtk/gtkentrycompletion.h>
+#include <gtk/gtkbox.h>
+#include <gtk/gtkhbox.h>
+#include <gtk/gtkvbox.h>
+#include <gtk/gtkliststore.h>
+#include <gtk/gtkstock.h>
+#include <gtk/gtkvseparator.h>
+#include <gtk/gtktypeutils.h>
+
+#define OL_PLAYER_CHOOSER(obj)                  G_TYPE_CHECK_INSTANCE_CAST (obj, ol_player_chooser_get_type (), OlPlayerChooser)
 #define OL_PLAYER_CHOOSER_CLASS(klass)          GTK_CHECK_CLASS_CAST (klass, ol_player_chooser_get_type (), OlPlayerChooserClass)
-#define OL_IS_PLAYER_CHOOSER(obj)               GTK_CHECK_TYPE (obj, ol_player_chooser_get_type ())
+#define OL_IS_PLAYER_CHOOSER(obj)               G_TYPE_CHECK_INSTANCE_TYPE (obj, ol_player_chooser_get_type ())
 #define OL_PLAYER_CHOOSER_GET_CLASS(obj)        (G_TYPE_INSTANCE_GET_CLASS ((obj), ol_player_chooser_get_type (), OlPlayerChooserClass))
 
 enum OlPlayerChooserResponse {
@@ -42,6 +60,7 @@ typedef struct _OlPlayerChooserClass OlPlayerChooserClass;
 struct _OlPlayerChooser
 {
   GtkDialog parent;
+  gpointer priv;
 };
 
 struct _OlPlayerChooserClass
@@ -49,14 +68,14 @@ struct _OlPlayerChooserClass
   GtkDialogClass parent_class;
 };
 
-GtkType ol_player_chooser_get_type (void);
+GType ol_player_chooser_get_type (void);
 
-/** 
+/**
  * Creates a new player chooser window.
- * 
+ *
  * @param supported_players List of *GAppInfo.
- * 
- * @return 
+ *
+ * @return
  */
 GtkWidget *ol_player_chooser_new (GList *supported_players);
 

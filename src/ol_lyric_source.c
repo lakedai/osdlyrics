@@ -3,7 +3,7 @@
  * Copyright (C) 2012  Tiger Soldier <tigersoldier@gmail.com>
  *
  * This file is part of OSD Lyrics.
- * 
+ *
  * OSD Lyrics is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <string.h>
@@ -28,30 +28,23 @@
 G_DEFINE_TYPE (OlLyricSource, ol_lyric_source, G_TYPE_DBUS_PROXY);
 G_DEFINE_TYPE (OlLyricSourceTask, ol_lyric_source_task, G_TYPE_OBJECT);
 G_DEFINE_TYPE (OlLyricSourceSearchTask,
-               ol_lyric_source_search_task,
-               OL_TYPE_LYRIC_SOURCE_TASK);
+              ol_lyric_source_search_task,
+              OL_TYPE_LYRIC_SOURCE_TASK);
 G_DEFINE_TYPE (OlLyricSourceDownloadTask,
-               ol_lyric_source_download_task,
-               OL_TYPE_LYRIC_SOURCE_TASK);
+              ol_lyric_source_download_task,
+              OL_TYPE_LYRIC_SOURCE_TASK);
 G_DEFINE_TYPE (OlLyricSourceCandidate,
-               ol_lyric_source_candidate,
-               G_TYPE_OBJECT);
+              ol_lyric_source_candidate,
+              G_TYPE_OBJECT);
 
-#define OL_LYRIC_SOURCE_GET_PRIVATE(obj)                                \
-  (G_TYPE_INSTANCE_GET_PRIVATE                                          \
-   ((obj),                                                              \
-    OL_TYPE_LYRIC_SOURCE,                                               \
-    OlLyricSourcePrivate))
-#define OL_LYRIC_SOURCE_CANDIDATE_GET_PRIVATE(obj)                      \
-  (G_TYPE_INSTANCE_GET_PRIVATE                                          \
-   ((obj),                                                              \
-    OL_TYPE_LYRIC_SOURCE_CANDIDATE,                                     \
-    OlLyricSourceCandidatePrivate))
-#define OL_LYRIC_SOURCE_TASK_GET_PRIVATE(obj)                           \
-  (G_TYPE_INSTANCE_GET_PRIVATE                                          \
-   ((obj),                                                              \
-    OL_TYPE_LYRIC_SOURCE_TASK,                                          \
-    OlLyricSourceTaskPrivate))
+#define OL_LYRIC_SOURCE_GET_PRIVATE(obj) \
+  ((OlLyricSourcePrivate *)((OL_LYRIC_SOURCE(obj))->priv))
+
+#define OL_LYRIC_SOURCE_CANDIDATE_GET_PRIVATE(obj) \
+  ((OlLyricSourceCandidatePrivate *)((OL_LYRIC_SOURCE_CANDIDATE(obj))->priv))
+
+#define OL_LYRIC_SOURCE_TASK_GET_PRIVATE(obj) \
+  ((OlLyricSourceTaskPrivate *)((OL_LYRIC_SOURCE_TASK(obj))->priv))
 
 struct _OlLyricSourceInfo
 {
@@ -193,21 +186,44 @@ ol_lyric_source_class_init (OlLyricSourceClass *klass)
   proxy_class = G_DBUS_PROXY_CLASS (klass);
   object_class->finalize = ol_lyric_source_finalize;
   proxy_class->g_signal = ol_lyric_source_g_signal;
-  g_type_class_add_private (klass, sizeof (OlLyricSourcePrivate));
 }
 
 static void
 ol_lyric_source_init (OlLyricSource *source)
 {
-  OlLyricSourcePrivate *priv = OL_LYRIC_SOURCE_GET_PRIVATE (source);
-  priv->search_tasks = g_hash_table_new_full (g_direct_hash,
-                                              g_direct_equal,
-                                              NULL,
-                                              (GDestroyNotify)g_object_unref);
-  priv->download_tasks = g_hash_table_new_full (g_direct_hash,
+  /* Allocate Private data structure */
+  (OL_LYRIC_SOURCE(source))->priv = \
+  (OlLyricSourcePrivate *) g_malloc0(sizeof(OlLyricSourcePrivate));
+  /* If correctly allocated, initialize parameters */
+  if((OL_LYRIC_SOURCE(source))->priv != NULL)
+  {
+    OlLyricSourcePrivate *priv = OL_LYRIC_SOURCE_GET_PRIVATE (source);
+    priv->search_tasks = g_hash_table_new_full (g_direct_hash,
                                                 g_direct_equal,
                                                 NULL,
                                                 (GDestroyNotify)g_object_unref);
+    priv->download_tasks = g_hash_table_new_full (g_direct_hash,
+                                                  g_direct_equal,
+                                                  NULL,
+                                                  (GDestroyNotify)g_object_unref);
+  }
+}
+
+static void
+ol_lyric_source_dispose(GObject *object)
+{
+  OlLyricSource *self = (OlLyricSource *)object;
+  OlLyricSourcePrivate *priv = OL_LYRIC_SOURCE_GET_PRIVATE(self);
+  /* Check if not NULL! To avoid calling dispose multiple times */
+  if(priv != NULL)
+  {
+    /* Deallocate contents of the private data, if any */
+    /* Deallocate private data structure */
+    g_free(priv);
+    /* And finally set the opaque pointer back to NULL, so that
+     *  we don't deallocate it twice. */
+    (OL_LYRIC_SOURCE(self))->priv = NULL;
+  }
 }
 
 OlLyricSource *
@@ -631,7 +647,6 @@ ol_lyric_source_candidate_class_init (OlLyricSourceCandidateClass *klass)
   object_class->get_property = ol_lyric_source_candidate_get_property;
   object_class->set_property = ol_lyric_source_candidate_set_property;
   object_class->finalize = ol_lyric_source_candidate_finalize;
-  g_type_class_add_private (klass, sizeof (OlLyricSourceCandidatePrivate));
   g_object_class_install_property (object_class,
                                    CANDIDATE_PROP_TITLE,
                                    g_param_spec_string ("title",
@@ -680,6 +695,32 @@ ol_lyric_source_candidate_class_init (OlLyricSourceCandidateClass *klass)
 static void
 ol_lyric_source_candidate_init (OlLyricSourceCandidate *source)
 {
+  /* Allocate Private data structure */
+  (OL_LYRIC_SOURCE_CANDIDATE(source))->priv = \
+    (OlLyricSourceCandidatePrivate *) g_malloc0(sizeof(OlLyricSourceCandidatePrivate));
+  /* If correctly allocated, initialize parameters */
+  if((OL_LYRIC_SOURCE_CANDIDATE(source))->priv != NULL)
+  {
+    OlLyricSourceCandidatePrivate *priv = OL_LYRIC_SOURCE_CANDIDATE_GET_PRIVATE(source);
+    /* Initialize private data, if any */
+  }
+}
+
+static void
+ol_lyric_source_candidate_dispose(GObject *object)
+{
+  OlLyricSourceCandidate *self = (OlLyricSourceCandidate *)object;
+  OlLyricSourceCandidatePrivate *priv = OL_LYRIC_SOURCE_CANDIDATE_GET_PRIVATE(self);
+  /* Check if not NULL! To avoid calling dispose multiple times */
+  if(priv != NULL)
+  {
+    /* Deallocate contents of the private data, if any */
+    /* Deallocate private data structure */
+    g_free(priv);
+    /* And finally set the opaque pointer back to NULL, so that
+     *  we don't deallocate it twice. */
+    (OL_LYRIC_SOURCE_CANDIDATE(self))->priv = NULL;
+  }
 }
 
 static OlLyricSourceCandidate *
@@ -914,7 +955,6 @@ ol_lyric_source_task_class_init (OlLyricSourceTaskClass *klass)
   object_class->get_property = ol_lyric_source_task_get_property;
   object_class->finalize = ol_lyric_source_task_finalize;
   klass->cancel = NULL;
-  g_type_class_add_private (klass, sizeof (OlLyricSourceTaskPrivate));
   g_object_class_install_property (object_class,
                                    TASK_PROP_SOURCE,
                                    g_param_spec_object ("source",
@@ -936,6 +976,31 @@ ol_lyric_source_task_class_init (OlLyricSourceTaskClass *klass)
 static void
 ol_lyric_source_task_init (OlLyricSourceTask *task)
 {
+  /* Allocate Private data structure */
+  (OL_LYRIC_SOURCE_TASK(task))->priv = \
+    (OlLyricSourceTaskPrivate *) g_malloc0(sizeof(OlLyricSourceTaskPrivate));
+  /* If correctly allocated, initialize parameters */
+  if((OL_LYRIC_SOURCE_TASK(task))->priv != NULL)
+  {
+    OlLyricSourceTaskPrivate *priv = OL_LYRIC_SOURCE_TASK_GET_PRIVATE(task);
+  }
+}
+
+static void
+ol_lyric_source_task_dispose(GObject *object)
+{
+  OlLyricSourceTask *self = (OlLyricSourceTask *)object;
+  OlLyricSourceTaskPrivate *priv = OL_LYRIC_SOURCE_TASK_GET_PRIVATE(self);
+  /* Check if not NULL! To avoid calling dispose multiple times */
+  if(priv != NULL)
+  {
+    /* Deallocate contents of the private data, if any */
+    /* Deallocate private data structure */
+    g_free(priv);
+    /* And finally set the opaque pointer back to NULL, so that
+     *  we don't deallocate it twice. */
+    (OL_LYRIC_SOURCE_TASK(self))->priv = NULL;
+  }
 }
 
 static void

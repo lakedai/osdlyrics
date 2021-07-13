@@ -14,9 +14,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with OSD Lyrics.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include <gtk/gtkprivate.h>
+
 #include "ol_cell_renderer_button.h"
 #include "ol_marshal.h"
 #include "ol_debug.h"
@@ -40,7 +40,7 @@ enum {
   /* PROP_WIDTH_CHARS, */
   /* PROP_WRAP_WIDTH, */
   /* PROP_ALIGN, */
-  
+
   /* /\* Style args *\/ */
   /* PROP_BACKGROUND, */
   /* PROP_FOREGROUND, */
@@ -63,7 +63,7 @@ enum {
   /* PROP_LANGUAGE, */
   /* PROP_ELLIPSIZE, */
   /* PROP_WRAP_MODE, */
-  
+
   /* /\* Whether-a-style-arg-is-set args *\/ */
   /* PROP_BACKGROUND_SET, */
   /* PROP_FOREGROUND_SET, */
@@ -85,8 +85,6 @@ enum {
 
 static guint cell_renderer_button_signals [LAST_SIGNAL];
 
-#define OL_CELL_RENDERER_BUTTON_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), OL_TYPE_CELL_RENDERER_BUTTON, OlCellRendererButtonPrivate))
-
 typedef struct _OlCellRendererButtonPrivate OlCellRendererButtonPrivate;
 struct _OlCellRendererButtonPrivate
 {
@@ -95,18 +93,20 @@ struct _OlCellRendererButtonPrivate
   PangoEllipsizeMode ellipsize;
   PangoWrapMode wrap_mode;
   PangoAlignment align;
-  
+
   gulong populate_popup_id;
   gulong entry_menu_popdown_timeout;
   gboolean in_entry_menu;
-  
+
   gint width_chars;
   gint wrap_width;
-  
+
   GtkWidget *entry;
 };
 
-G_DEFINE_TYPE (OlCellRendererButton, ol_cell_renderer_button, GTK_TYPE_CELL_RENDERER)
+G_DEFINE_TYPE_WITH_PRIVATE (OlCellRendererButton,
+                            ol_cell_renderer_button,
+                            GTK_TYPE_CELL_RENDERER)
 
 static void ol_cell_renderer_button_get_property (GObject *object,
                                            guint param_id,
@@ -157,7 +157,7 @@ ol_cell_renderer_button_init (OlCellRendererButton *cellbutton)
 {
   OlCellRendererButtonPrivate *priv;
 
-  priv = OL_CELL_RENDERER_BUTTON_GET_PRIVATE (cellbutton);
+  priv = ol_cell_renderer_button_get_instance_private (cellbutton);
 
   GTK_CELL_RENDERER (cellbutton)->xalign = 0.0;
   GTK_CELL_RENDERER (cellbutton)->yalign = 0.5;
@@ -226,8 +226,6 @@ ol_cell_renderer_button_class_init (OlCellRendererButtonClass *class)
                   g_cclosure_marshal_VOID__STRING,
                   G_TYPE_NONE, 1,
                   G_TYPE_STRING);
-
-  g_type_class_add_private (object_class, sizeof (OlCellRendererButtonPrivate));
 }
 
 static void
@@ -280,15 +278,6 @@ ol_cell_renderer_button_set_property (GObject *object,
   case PROP_TEXT:
     ol_logf (OL_DEBUG, "  text\n");
     g_free (cellbutton->text);
-
-    /* if (priv->markup_set) */
-    /* { */
-    /*   if (cellbutton->extra_attrs) */
-    /*     pango_attr_list_unref (cellbutton->extra_attrs); */
-    /*   cellbutton->extra_attrs = NULL; */
-    /*   priv->markup_set = FALSE; */
-    /* } */
-
     cellbutton->text = g_strdup (g_value_get_string (value));
     g_object_notify (object, "text");
     break;
@@ -390,13 +379,13 @@ ol_cell_renderer_button_render (GtkCellRenderer      *cell,
   layout = get_layout (cellbutton, widget, TRUE, flags);
   get_size (cell, widget, cell_area, layout, &x_offset, &y_offset, NULL, NULL);
   /* ol_logf (OL_DEBUG, "  offset: (%d,%d)\n", x_offset, y_offset); */
-  if (!cell->sensitive) 
+  if (!cell->sensitive)
   {
     state |= GTK_STATE_INSENSITIVE;
   }
   else if ((flags & GTK_CELL_RENDERER_SELECTED) == GTK_CELL_RENDERER_SELECTED)
   {
-    if (GTK_WIDGET_HAS_FOCUS (widget))
+    if (gtk_widget_has_focus (widget))
       state |= GTK_STATE_SELECTED;
     else
       state |= GTK_STATE_ACTIVE;
@@ -407,19 +396,19 @@ ol_cell_renderer_button_render (GtkCellRenderer      *cell,
   }
   else
   {
-    if (GTK_WIDGET_STATE (widget) == GTK_STATE_INSENSITIVE)
+    if (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE)
       state = GTK_STATE_INSENSITIVE;
     else
       state = GTK_STATE_NORMAL;
   }
 
-  pango_layout_set_width (layout, 
+  pango_layout_set_width (layout,
                           (cell_area->width - x_offset - 2 * cell->xpad) * PANGO_SCALE);
 
   gtk_paint_layout (widget->style,
                     window,
                     state,
-        	    TRUE,
+                    TRUE,
                     expose_area,
                     widget,
                     "cellrenderertext",
@@ -427,8 +416,6 @@ ol_cell_renderer_button_render (GtkCellRenderer      *cell,
                     cell_area->y + y_offset + cell->ypad,
                     layout);
   g_object_unref (layout);
-  /* if (cell->sensitive && */
-  /*     (flags & GTK_CELL_RENDERER_PRELIT) == GTK_CELL_RENDERER_PRELIT) */
   {
     GdkPixbuf *icon = get_icon (cellbutton, widget);
     if (icon != NULL)
@@ -463,7 +450,7 @@ add_attr (PangoAttrList  *attr_list,
 {
   attr->start_index = 0;
   attr->end_index = G_MAXINT;
-  
+
   pango_attr_list_insert (attr_list, attr);
 }
 
@@ -478,8 +465,8 @@ get_layout (OlCellRendererButton *cellbutton,
   PangoLayout *layout;
   OlCellRendererButtonPrivate *priv;
 
-  priv = OL_CELL_RENDERER_BUTTON_GET_PRIVATE (cellbutton);
-  
+  priv = ol_cell_renderer_button_get_instance_private (cellbutton);
+
   layout = gtk_widget_create_pango_layout (widget, cellbutton->text);
   attr_list = pango_attr_list_new ();
   pango_layout_set_single_paragraph_mode (layout, TRUE);
@@ -515,7 +502,7 @@ get_layout (OlCellRendererButton *cellbutton,
   pango_layout_set_attributes (layout, attr_list);
 
   pango_attr_list_unref (attr_list);
-  
+
   return layout;
 }
 
@@ -534,7 +521,7 @@ get_size (GtkCellRenderer *cell,
 
   gint btn_width = (cell->xpad) * 2;
   gint btn_height = (cell->ypad) * 2;
-  
+
   GdkPixbuf *icon = get_icon (cellbutton, widget);
   if (icon != NULL)
   {
@@ -545,7 +532,7 @@ get_size (GtkCellRenderer *cell,
                    icon,
                    0,
                    &icon_x, &icon_y, &icon_width, &icon_height);
-    
+
     g_object_unref (icon);
     btn_width += icon_width;
     btn_height += icon_height;
@@ -568,71 +555,6 @@ get_size (GtkCellRenderer *cell,
     ol_logf (OL_DEBUG, "  offset: %dx%d\n", cell_area->x, cell_area->y);
   }
   ol_logf (OL_DEBUG, "  size: %dx%d\n", btn_width, btn_height);
-  /* PangoContext *context; */
-  /* PangoFontMetrics *metrics; */
-  /* PangoFontDescription *font_desc; */
-  /* gint row_height; */
-
-  /* font_desc = pango_font_description_copy_static (widget->style->font_desc); */
-  /* pango_font_description_merge_static (font_desc, cellbutton->font, TRUE); */
-
-  /* context = gtk_widget_get_pango_context (widget); */
-
-  /* metrics = pango_context_get_metrics (context, */
-  /*                                      font_desc, */
-  /*                                      pango_context_get_language (context)); */
-  /* row_height = (pango_font_metrics_get_ascent (metrics) + */
-  /*               pango_font_metrics_get_descent (metrics)); */
-  /* pango_font_metrics_unref (metrics); */
-
-  /* pango_font_description_free (font_desc); */
-
-  /* gtk_cell_renderer_set_fixed_size (cell, */
-  /*                                   cell->width, 2*cell->ypad + */
-  /*                                   PANGO_PIXELS (row_height)); */
-  /* ol_logf (OL_DEBUG, */
-  /*          "  size: %dx%d\n", */
-  /*          cell->width, */
-  /*          2*cell->ypad + */
-  /*          PANGO_PIXELS (row_height)); */
-
-  /* if (layout) */
-  /*   g_object_ref (layout); */
-  /* else */
-  /*   layout = get_layout (cellbutton, widget, FALSE, 0); */
-
-  /* pango_layout_get_pixel_extents (layout, NULL, &rect); */
-  /* if (height) */
-  /*   *height = cell->ypad * 2 + rect.height; */
-
-  /* if (width) */
-  /*   *width = cell->xpad * 2 + rect.x + rect.width; */
-
-  /* if (cell_area) */
-  /* { */
-  /*   ol_logf (OL_DEBUG, "  cell_area:%dx%d\n", cell_area->width, cell_area->height); */
-  /*   if (x_offset) */
-  /*   { */
-  /*     if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) */
-  /*       *x_offset = (1.0 - cell->xalign) * (cell_area->width - (rect.x + rect.width + (2 * cell->xpad))); */
-  /*     else  */
-  /*       *x_offset = cell->xalign * (cell_area->width - (rect.x + rect.width + (2 * cell->xpad))); */
-
-  /*     *x_offset = MAX(*x_offset, 0); */
-  /*   } */
-  /*   if (y_offset) */
-  /*   { */
-  /*     *y_offset = cell->yalign * (cell_area->height - (rect.height + (2 * cell->ypad))); */
-  /*     *y_offset = MAX (*y_offset, 0); */
-  /*   } */
-  /* } */
-  /* else */
-  /* { */
-  /*   if (x_offset) *x_offset = 0; */
-  /*   if (y_offset) *y_offset = 0; */
-  /* } */
-
-  /* g_object_unref (layout); */
 }
 
 
