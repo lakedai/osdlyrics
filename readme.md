@@ -18,6 +18,7 @@ Merged with upstream of commit 3945527 on Jun 2, 2021 (release 0.5.9)
 - 修改：     src/ol_search_diglog.c
 
 ### install instruction:
+	sudo apt install python3-future
 	./autogen.sh
 	./configure --prefix=/usr PYTHON=/usr/bin/python3
 	make
